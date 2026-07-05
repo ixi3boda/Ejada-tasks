@@ -1,6 +1,20 @@
-package com.abdelrahman;
+package com.ejada.practice.daytwo.service;
 
+import com.ejada.practice.daytwo.models.Bike;
+import com.ejada.practice.daytwo.models.Car;
+import com.ejada.practice.daytwo.models.Movable;
+import com.ejada.practice.daytwo.models.Person;
+import com.ejada.practice.daytwo.models.Vehicle;
+
+/**
+ * Entry point for the Java practice application.
+ */
 public class Main {
+    /**
+     * Runs the demo program.
+     *
+     * @param args command line arguments
+     */
     public static void main(String[] args) {
         Vehicle car = new Car("Toyota", 120);
         Vehicle bike = new Bike("BMX", 60);
@@ -26,6 +40,5 @@ public class Main {
         Person person = new Person("Alice", 25);
         person.setAge(26);
         System.out.println("Person: " + person.getName() + " | Age: " + person.getAge());
-
     }
 }
