@@ -1,0 +1,8 @@
+use TestSchema;
+
+CREATE TABLE Books(
+    book_id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(50),
+    author VARCHAR(50),
+    price DECIMAL(10,2)
+);
