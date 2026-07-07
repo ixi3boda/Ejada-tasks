@@ -1,4 +1,4 @@
-package com.ejada.practice.daytwo.models;
+package com.ejada.practice.daytwo.interfaces;
 
 /**
  * Functional interface for objects that can move.

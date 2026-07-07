@@ -1,19 +1,25 @@
 package com.ejada.practice.daytwo.service;
 
+import com.ejada.practice.daytwo.interfaces.Movable;
 import com.ejada.practice.daytwo.models.Bike;
 import com.ejada.practice.daytwo.models.Car;
-import com.ejada.practice.daytwo.models.Movable;
 import com.ejada.practice.daytwo.models.Person;
 import com.ejada.practice.daytwo.models.Vehicle;
 
 /**
- * Entry point for the Java practice application.
+ * Main class for the Java practice application.
+ *
+ * <p>This class demonstrates simple usage of inheritance, interface implementation,
+ * lambda expressions, and object state updates.</p>
  */
 public class Main {
     /**
-     * Runs the demo program.
+     * Entry point for the application.
      *
-     * @param args command line arguments
+     * <p>Creates sample vehicle and person objects, prints details, invokes
+     * interface methods via lambda expressions, and updates object properties.</p>
+     *
+     * @param args command line arguments passed to the application
      */
     public static void main(String[] args) {
         Vehicle car = new Car("Toyota", 120);
