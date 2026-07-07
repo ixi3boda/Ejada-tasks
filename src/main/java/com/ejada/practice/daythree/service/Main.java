@@ -12,6 +12,7 @@ import java.util.Scanner;
 import java.util.Set;
 
 import com.ejada.practice.daythree.models.InvalidAgeException;
+import com.ejada.practice.daythree.models.InvalidNameException;
 import com.ejada.practice.daythree.models.Person;
 import com.ejada.practice.daythree.models.Product;
 
@@ -19,6 +20,11 @@ import com.ejada.practice.daythree.models.Product;
  * Demonstrates Java practice examples for the day three package.
  */
 public class Main {
+    /**
+     * Runs the Java practice examples for the day three session.
+     *
+     * @param args command-line arguments
+     */
     public static void main(String[] args) {
         System.out.println("Java practice examples");
         TryCatchAndUserInput();
@@ -27,22 +33,27 @@ public class Main {
         ModernJava();
     }
 
+    /**
+     * Demonstrates try-catch handling with custom validation exceptions.
+     */
     private static void TryCatchAndUserInput() {
         System.out.println("\n1) try-catch, custom exception, and user input");
         Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter your name: ");
+        String name = scanner.nextLine();
         System.out.print("Enter your age: ");
 
         try {
             String input = scanner.nextLine();
             int age = Integer.parseInt(input);
-            if (age < 0 || age > 100) {
-                throw new InvalidAgeException("Age must be between 0 and 100.");
-            }
-            System.out.println("Valid age: " + age);
+            Person person = new Person(name, age);
+            System.out.println("Valid person: " + person);
         } catch (NumberFormatException exception) {
             System.out.println("That is not a valid integer. " + exception.getMessage());
+        } catch (InvalidNameException exception) {
+            System.out.println("Custom name exception: " + exception.getMessage());
         } catch (InvalidAgeException exception) {
-            System.out.println("Custom exception: " + exception.getMessage());
+            System.out.println("Custom age exception: " + exception.getMessage());
         } catch (Exception exception) {
             System.out.println("Unexpected error: " + exception.getMessage());
         } finally {
@@ -50,6 +61,9 @@ public class Main {
         }
     }
 
+    /**
+     * Demonstrates collections, sorting, and ordering examples.
+     */
     private static void Collections() {
         System.out.println("\n2) Collections and ordering");
 
@@ -83,6 +97,9 @@ public class Main {
         System.out.println("Comparable example: " + comparablePeople);
     }
 
+    /**
+     * Demonstrates stream API usage.
+     */
     private static void Streams() {
         System.out.println("\n3) Stream API examples");
 
@@ -106,6 +123,9 @@ public class Main {
         System.out.println("Average: " + average);
     }
 
+    /**
+     * Demonstrates modern Java language features.
+     */
     private static void ModernJava() {
         System.out.println("\n4) Modern Java features");
 

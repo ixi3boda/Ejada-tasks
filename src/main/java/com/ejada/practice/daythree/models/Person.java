@@ -22,7 +22,8 @@ public class Person implements Comparable<Person> {
      *
      * @param name the person's name
      * @param age the person's age, must be between 0 and 100
-     * @throws IllegalArgumentException if the name is blank or the age is out of range
+     * @throws InvalidNameException if the name is blank
+     * @throws InvalidAgeException if the age is out of range
      */
     public Person(String name, int age) {
         this();
@@ -36,11 +37,11 @@ public class Person implements Comparable<Person> {
      * Validates the provided name.
      *
      * @param name the name to validate
-     * @throws IllegalArgumentException if the name is blank
+     * @throws InvalidNameException if the name is blank
      */
     private void validateName(String name) {
         if (name == null || name.isBlank()) {
-            throw new IllegalArgumentException("Name cannot be blank.");
+            throw new InvalidNameException();
         }
     }
 
@@ -48,11 +49,11 @@ public class Person implements Comparable<Person> {
      * Validates the provided age.
      *
      * @param age the age to validate
-     * @throws IllegalArgumentException if the age is out of range
+     * @throws InvalidAgeException if the age is out of range
      */
     private void validateAge(int age) {
         if (age < 0 || age > 100) {
-            throw new IllegalArgumentException("Age must be between 0 and 100.");
+            throw new InvalidAgeException();
         }
     }
 
@@ -60,7 +61,7 @@ public class Person implements Comparable<Person> {
      * Sets the person's name.
      *
      * @param name the new name
-     * @throws IllegalArgumentException if the name is blank
+     * @throws InvalidNameException if the name is blank
      */
     public void setName(String name) {
         validateName(name);
@@ -71,7 +72,7 @@ public class Person implements Comparable<Person> {
      * Sets the person's age.
      *
      * @param age the new age
-     * @throws IllegalArgumentException if the age is out of range
+     * @throws InvalidAgeException if the age is out of range
      */
     public void setAge(int age) {
         validateAge(age);
