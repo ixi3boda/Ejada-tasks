@@ -1,5 +1,6 @@
 use TestSchema;
 
+/* JOIN BASED QUERIES */
 SELECT e.employee_name,d.department_name
 FROM Employees e
 INNER JOIN Departments d

@@ -1,5 +1,6 @@
 use TestSchema;
 
+/* Creates tables with primary and foreign keys */
 CREATE TABLE Departments (
     department_id INT PRIMARY KEY,
     department_name VARCHAR(100) NOT NULL
