@@ -1,12 +1,12 @@
 use TestSchema;
 
 /* Creates tables with primary and foreign keys */
-CREATE TABLE Departments (
+CREATE TABLE IF NOT EXISTS Departments (
     department_id INT PRIMARY KEY,
     department_name VARCHAR(100) NOT NULL
 );
 
-CREATE TABLE Employees (
+CREATE TABLE IF NOT EXISTS Employees (
     employee_id INT PRIMARY KEY,
     employee_name VARCHAR(100) NOT NULL,
     salary DECIMAL(10,2),
