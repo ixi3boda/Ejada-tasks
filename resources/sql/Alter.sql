@@ -1,4 +1,4 @@
-use TestSchema;
+USE TestSchema;
 
 /* Add a new column to the Books table */
 ALTER TABLE Books
@@ -10,7 +10,7 @@ MODIFY price DECIMAL(12,2);
 
 /* Rename the book_description column to bk_description */
 ALTER TABLE Books
-RENAME COLUMN book_description TO bk_description;
+CHANGE COLUMN book_description bk_description VARCHAR(100);
 
 /* Drop the bk_description column from the Books table */
 ALTER TABLE Books
